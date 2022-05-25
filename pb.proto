@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package gRPC;
+
+import "google/protobuf/timestamp.proto";
+option go_package = "https://github.com/Orochyy/gRPC/gen;gen";
+
+message Activity {
+  int32 id = 1;
+  google.protobuf.Timestamp time = 2;
+  string description = 3;
+}
