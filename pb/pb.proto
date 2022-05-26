@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "https://github.com/Orochyy/gRPC/gen;gen";
+option go_package = "https://github.com/Orochyy/gRPC/proto";
 package gRPC;
 
 service RouteGuide {
