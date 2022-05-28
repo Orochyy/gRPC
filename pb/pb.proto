@@ -13,7 +13,7 @@ service RouteGuide {
 
   rpc RouteChat(stream RouteNote) returns (stream RouteNote) {}
 }
-//
+
 message Point {
   int32 latitude = 1;
   int32 longitude = 2;
