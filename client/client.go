@@ -15,7 +15,7 @@ import (
 )
 
 var (
-	tlsq               = flag.Bool("tlsq", false, "Connection uses TLSQ if true, else plain TCP")
+	tls                = flag.Bool("tls", false, "Connection uses TLS if true, else plain TCP")
 	caFile             = flag.String("ca_file", "", "The file containing the CA root cert file")
 	serverAddr         = flag.String("addr", "localhost:50051", "The server address in the format of host:port")
 	serverHostOverride = flag.String("server_host_override", "x.test.example.com", "The server name used to verify the hostname returned by the TLS handshake")
@@ -132,7 +132,7 @@ func randomPoint(r *rand.Rand) *pb.Point {
 func main() {
 	flag.Parse()
 	var opts []grpc.DialOption
-	if *tlsq {
+	if *tls {
 		if *caFile == "" {
 			*caFile = data.Path("x509/ca_cert.pem")
 		}
