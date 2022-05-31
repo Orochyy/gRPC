@@ -30,9 +30,8 @@ var (
 type routeGuideServer struct {
 	pb.UnimplementedRouteGuideServer
 	savedFeatures []*pb.Feature // read-only after initialized
-
-	mu         sync.Mutex // protects routeNotes
-	routeNotes map[string][]*pb.RouteNote
+	mu            sync.Mutex    // protects routeNotes
+	routeNotes    map[string][]*pb.RouteNote
 }
 
 // GetFeature returns the feature at the given point.
